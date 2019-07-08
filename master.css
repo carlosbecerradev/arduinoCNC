@@ -1,0 +1,197 @@
+:root {
+    --clr-primary: #1ee692;
+    --clr-gris: #999;
+    --clr-dark: #222222;
+    --clr-light: #fff;
+}
+*, *::after, *::before {
+    padding: 0;
+    box-sizing: border-box;
+}
+html {
+    padding: 0 !important;
+    scroll-behavior: smooth;
+}
+body {
+    margin: 0;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+}
+.nav {
+    display: none;
+    height: 100vh;
+    background: var(--clr-dark);
+}
+.nav .brand {
+    text-align: center;
+    padding: 32px 0;
+    color: var(--clr-primary);
+}
+.nav .navbar {
+    margin: 8px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.nav .navbar .nav-link {
+    text-transform: uppercase;
+    padding: 24px;
+    color: var(--clr-gris);
+    text-decoration: none;
+    width: 90%;
+    font-weight: 700;
+    border-bottom: 1px solid var(--clr-gris);
+    transition: 0.5s;
+}
+.nav .navbar .nav-link:first-child {
+    border-top: 1px solid var(--clr-gris);
+}
+.nav .navbar .nav-link:hover {
+    color: var(--clr-primary);
+}
+.nav .footer {
+    position: absolute;
+    bottom: 0;
+    padding: 8px;
+    text-align: center;
+    color: var(--clr-gris);
+    font-size: 12px;
+    width: 100%;
+}
+.wrapper {
+    background: var(--clr-light);
+}
+.wrapper .header {    
+    position: relative;
+    background: var(--clr-primary);
+}
+.wrapper .hero {
+    height: 100vh;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: none;
+}
+.wrapper .hero .img-cnc {   
+    padding: 24px 0;
+}
+.wrapper .hero .cotenido {
+    padding: 24px 0;
+}
+.wrapper .hero .cotenido h1 {
+    color: var(--clr-light);
+    margin-bottom: 8px;
+    font-weight: bolder;
+    font-size: 40px;
+    letter-spacing: 2px;
+}
+.wrapper .hero .cotenido p {
+    font-size: 24px;
+}
+.wrapper .hero .cotenido .button {
+    display: inline-block;
+    text-decoration: none;
+    margin: 16px;
+    padding: 16px 32px;
+    font-size: 14px;
+    font-weight: bolder;
+    text-transform: uppercase;
+    border: none;
+    color: var(--clr-light);
+    background: var(--clr-dark);
+    border-radius: 10px;
+}
+.wrapper .hero .cotenido .button:hover {
+    color: var(--clr-dark);
+    background: var(--clr-light);
+}
+.wrapper section {
+    padding: 5em 0;
+    text-align: center;
+}
+.wrapper .materiales .material {
+    margin: 24px 0;
+}
+.wrapper .materiales .material .nombre {
+    grid-area: nombre;
+    font-size: 24px;
+    color: var(--clr-primary);
+    text-shadow: 1px 1px var(--clr-primary);
+}
+.wrapper .materiales .material .img {
+    grid-area: img;
+}
+.wrapper .materiales .material .contenido {
+    grid-area: cont;
+    text-align: left;
+    padding: 16px;
+}
+.wrapper .materiales .material .contenido h4 {
+    margin-bottom: 16px;
+}
+.wrapper .materiales .material .contenido p {
+    text-align: justify;
+    margin: 8px 0;
+}
+.subtitulo {
+    position: relative;  
+    letter-spacing: 2px;
+    font-size: 24px;
+    text-transform: uppercase;
+    margin-bottom: 1em;
+    font-weight: bolder;
+    display: inline-block;
+}
+.subtitulo::before {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 25%;
+    width: 50%;
+    border: 1px solid var(--clr-dark);
+}
+.subtitulo.A {
+    color: var(--clr-light);
+}
+.subtitulo.A::before {
+    border: 1px solid var(--clr-light);
+}
+img {
+    max-width: 100%;
+}
+.bg-oblicua {
+    height: 100px;
+    width: 100%;
+    background: var(--clr-light);
+    clip-path: polygon(0 100%, 100% 0, 100% 100%);
+}
+.bg-oblicua.A {
+    background: var(--clr-primary);
+}
+.proceso {
+    background: var(--clr-primary);
+}
+
+@media screen and (min-width: 768px) {
+    body {
+        display: grid;
+        grid: 100% / 20% 80%;
+        grid-template-areas: 
+            "nav wrapper";
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+    }
+    .nav {
+        grid-area: nav;
+        position: sticky;
+        top: 0;
+        display: block ;
+    }
+    .wrapper .materiales .material {
+        display: grid;
+        grid: 56px auto / 50% 50%;
+        grid-template-areas: 
+            "nombre img" 
+            "cont img";
+    }
+}
