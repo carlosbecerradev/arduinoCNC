@@ -256,3 +256,11 @@ img {
         align-items: center;
     }
 }
+.img-integrantes {
+    flex-basis: 60%;
+}
+.img-integrantes-img {
+    margin-right: auto;
+    margin-left: auto;
+    height: 100%;
+}
